@@ -7,8 +7,8 @@ body {
 
 /* NAVBAR */
 .logo {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
 }
 
 .container-fluid {
@@ -22,7 +22,7 @@ body {
 
 /* CONTENT SECTION */
 .content-section {
-    padding-top: 100px;
+    padding-top: 90px;
     background-color: rgb(250, 250, 250);
 }
 
@@ -32,12 +32,25 @@ body {
     gap: 15px;
     justify-content: center;
     align-items: center;
-    padding: 70px 0;
+    padding: 50px 0 60px 0;
 }
 
 .judul {
+    position: relative;
+    /* font-size: 2rem;
+    font-weight: bold; */
     text-align: center;
 }
+
+/* .judul::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: url('img/arrow.png') no-repeat center/contain;
+    right: -20px;
+    top: 10px;
+} */
 
 .highlight {
     text-align: center;
@@ -49,7 +62,105 @@ body {
     color: rgb(75, 75, 75);
 }
 
+/* .scroll {
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+.scroll::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('img/sketch-outline.png') no-repeat center/contain;
+    top: -5px;
+    left: -5px;
+    z-index: -1;
+} */
+
 #about {
-    background-color: blue;
+    background-color: #27445D;
+    color: white;
+    display: flex;
+}
+
+.intro {
     padding: 50px 75px;
+    width: 79%;
+}
+
+.hero {
+    width: 21%;
+    justify-content: end;
+    display: flex;
+}
+
+.hero img {
+    width: 296px;
+    height: 364px;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 600;
+    padding-bottom: 10px;
+}
+
+.content-about {
+    color: rgb(226, 226, 226);
+}
+
+.exp {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.content-exp {
+    display: flex;
+    gap: 25px;
+}
+
+.content-poin {
+    display: flex;
+    gap: 6px;
+    padding-bottom: 20px;
+}
+
+.year-exp {
+    color: rgb(148, 148, 255);
+    text-align: center;
+    font-weight: 600;
+}
+
+.judul-exp {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.place-exp, .desc-exp {
+    color: rgb(228, 228, 228);
+    font-size: 12px;
+}
+
+.desc-exp {
+    padding-top: 5px;
+}
+
+#portfolio {
+    background-color: rgb(250, 250, 250);
+}
+
+.intro-porto {
+    padding: 50px 75px;
+}
+
+.content-porto {
+    color: rgb(87, 87, 87);
 }
