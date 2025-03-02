@@ -20,7 +20,7 @@ body {
     font-size: 23px;
 }
 
-/* CONTENT SECTION */
+/* HOME */
 .content-section {
     padding-top: 90px;
     background-color: rgb(250, 250, 250);
@@ -83,6 +83,7 @@ body {
     z-index: -1;
 } */
 
+/* ABOUT */
 #about {
     background-color: #27445D;
     color: white;
@@ -124,7 +125,7 @@ body {
 
 .content-exp {
     display: flex;
-    gap: 25px;
+    gap: 35px;
 }
 
 .content-poin {
@@ -146,21 +147,96 @@ body {
 
 .place-exp, .desc-exp {
     color: rgb(228, 228, 228);
-    font-size: 12px;
+    font-size: 13px;
 }
 
 .desc-exp {
     padding-top: 5px;
 }
 
+/* PORTO */
 #portfolio {
     background-color: rgb(250, 250, 250);
 }
 
 .intro-porto {
-    padding: 50px 75px;
+    padding: 50px 75px 20px 75px;
 }
 
 .content-porto {
     color: rgb(87, 87, 87);
+}
+
+.content-porto a {
+    text-decoration: none;
+    color: #27445D;
+    font-weight: 500;
+}
+
+.content-porto a:hover {
+    color: #142533;
+}
+
+.accordion-section {
+    padding: 0 75px 50px 75px;
+}
+
+.accordion-item, .accordion-header, .accordion-button {
+    background-color: rgb(250, 250, 250) !important;
+}
+
+.accordion-button {
+    padding: 15px 0px;
+}
+
+.accordion-body {
+    padding: 5px 0 10px 0;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.accordion-button {
+    color: #000000;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.grid-card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+}
+
+.card a {
+    text-decoration: none;
+    color: black;
+}
+
+.card {
+    padding: 20px;
+    background: rgba(0, 72, 155, 0.2); 
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+    backdrop-filter: blur(10px); 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
+    transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+    backdrop-filter: blur(15px); 
+    transform: translateY(-5px); 
+}
+
+.card-judul {
+    font-size: 15px;
+    font-weight: 650;
+    color: #142533;
+}
+
+.card-desc {
+    font-size: 13px;
+    color: #27445D;
 }
