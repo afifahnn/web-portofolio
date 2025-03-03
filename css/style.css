@@ -202,6 +202,7 @@ body {
     color: #000000;
     font-weight: 700;
     font-size: 16px;
+    border: none;
 }
 
 .grid-card {
@@ -239,4 +240,35 @@ body {
 .card-desc {
     font-size: 13px;
     color: #27445D;
+}
+
+/* FOOTER */
+#footer {
+    background-color: #27445D;
+    padding: 50px 75px 10px 75px;
+}
+
+.connect {
+    text-align: center;
+    color: #ffffff;
+    font-weight: 500;
+    padding-bottom: 50px;
+}
+
+.logo-contact {
+    padding-bottom: 50px;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.linked a i {
+    font-size: 30px;
+    color: #ffffff;
+}
+
+.copyright {
+    color: #ffffff;
+    font-size: 13px;
+    text-align: center;
 }
