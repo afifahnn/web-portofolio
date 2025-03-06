@@ -1,11 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
 }
 
 /* NAVBAR */
+.navbar {
+    backdrop-filter: blur(10px);
+    background-color: rgba(250, 250, 250, 0.8);
+    padding-top: 0; 
+    padding-bottom: 0;
+}
+
 .logo {
     width: 70px;
     height: 70px;
@@ -20,6 +31,27 @@ body {
     font-size: 23px;
 }
 
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-link.active {
+    font-weight: 500;
+    color: #142533;
+}
+
+.nav-link.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: #142533;
+}
+
+
 /* HOME */
 .content-section {
     padding-top: 90px;
@@ -32,25 +64,13 @@ body {
     gap: 15px;
     justify-content: center;
     align-items: center;
-    padding: 50px 0 60px 0;
+    padding-top: 50px;
 }
 
 .judul {
     position: relative;
-    /* font-size: 2rem;
-    font-weight: bold; */
     text-align: center;
 }
-
-/* .judul::after {
-    content: "";
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    background: url('img/arrow.png') no-repeat center/contain;
-    right: -20px;
-    top: 10px;
-} */
 
 .highlight {
     text-align: center;
@@ -62,26 +82,29 @@ body {
     color: rgb(75, 75, 75);
 }
 
-/* .scroll {
-    display: inline-block;
-    font-size: 1rem;
-    font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 20px;
-    position: relative;
-    cursor: pointer;
+.scroll {
+    padding-top: 60px;
+    padding-bottom: 10px;
+    font-size: 13px;
 }
 
-.scroll::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: url('img/sketch-outline.png') no-repeat center/contain;
-    top: -5px;
-    left: -5px;
-    z-index: -1;
-} */
+.scroll i {
+    font-size: 20px;
+    color: #142533;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow-down {
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+}
 
 /* ABOUT */
 #about {

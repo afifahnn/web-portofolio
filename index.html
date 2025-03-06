@@ -5,20 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Afifah's portfolio :)</title>
+    <link rel="icon" type="image/png" href="img/logo1.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
 
 <body>
     <!-- NAVBAR -->
-    <nav class="navbar fixed-top navbar-expand-lg"
-        style="background-color: rgb(250, 250, 250); padding-top: 0; padding-bottom: 0;">
+    <nav class="navbar fixed-top navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#home" style="padding-right: 8%; padding-top: 0; padding-bottom: 0;">
+            <div class="navbar-brand" style="padding-right: 8%; padding-top: 0; padding-bottom: 0;">
                 <img class="logo" src="../img/logo1.png" alt="Logo" height="40">
-            </a>
+            </div>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,7 +29,10 @@
             <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item pe-4">
-                        <a class="nav-link active" href="#about">About</a>
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item pe-4">
+                        <a class="nav-link" href="#about">About</a>
                     </li>
                     <li class="nav-item pe-4">
                         <a class="nav-link" href="#portfolio">Portfolio</a>
@@ -62,15 +66,20 @@
     <!-- CONTENT -->
     <div class="content-section">
         <!-- HOME -->
-        <div id="home">
-            <div class="judul">Hola! <br> I'm Afifah✌</div>
+        <section id="home">
+            <div class="judul">Hola! <br> <span id="typing-text"></span></div>
             <div class="highlight"><b>Web Development & UI Designer Enthusiast</b> <br> Based in <b>Indonesia</b></div>
             <div class="resume">I am passionate about designing intuitive and visually appealing web interfaces.</div>
-            <!-- <div class="scroll">Get to know me better – just scroll!</div> -->
-        </div>
+            <div class="scroll">
+                Get to know me better – just scroll!
+                <br><br>
+                <i class="fa-solid fa-computer-mouse"></i>
+                <i class="fa-solid fa-angles-down arrow-down"></i>
+            </div>
+        </section>
 
         <!-- ABOUT -->
-        <div id="about">
+        <section id="about">
             <div class="intro">
                 <div class="title">About Me</div>
                 <div class="content-about">Hallo, I'm Afifah Nur Nabila👋 <br>
@@ -153,10 +162,10 @@
             <div class="hero">
                 <img src="../img/hero2.png">
             </div>
-        </div>
+        </section>
 
         <!-- PORTFOLIO -->
-        <div id="portfolio">
+        <section id="portfolio">
             <div class="intro-porto">
                 <div class="title">My Portfolio</div>
                 <div class="content-porto">Explore my projects and experiences, or check out my <a href="https://github.com/afifahnn" target="_blank">GitHub</a>.</div>
@@ -259,10 +268,10 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- FOOTER -->
-        <div id="footer">
+        <section id="footer">
             <div class="connect">Let's connect! <br> I'm always open to discussions and new opportunities. Feel free to reach out through the contact details below.</div>
             <div class="logo-contact">
                 <div class="linked">
@@ -282,16 +291,46 @@
                 </div>
             </div>
             <div class="copyright">© 2025 Afifah Nur Nabila. All rights reserved.</div>
-        </div>
+        </section>
     </div>
 
     <!-- JAVASCRIPT -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous">
     </script>
+
+    <script>
+        // ACTIVE SCROLL
+        document.addEventListener("DOMContentLoaded", function () {
+            const sections = document.querySelectorAll("section");
+            const navLinks = document.querySelectorAll(".navbar .nav-link");
+        
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => link.classList.remove("active"));
+                        const id = entry.target.getAttribute("id");
+                        document.querySelector(`.nav-link[href="#${id}"]`).classList.add("active");
+                    }
+                });
+            }, { rootMargin: "-50% 0px -50% 0px", threshold: 0 });
+        
+            sections.forEach(section => observer.observe(section));
+        });
+
+        // TYPING EFFECT
+        var typed = new Typed("#typing-text", {
+            strings: ["I'm Afifah✌"],
+            typeSpeed: 100,
+            backSpeed: 100,
+            backDelay: 3000,
+            showCursor: true, 
+            loop: true
+        });
+    </script>    
 </body>
 
 </html>
